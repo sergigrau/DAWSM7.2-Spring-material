@@ -1,4 +1,4 @@
-package edu.fje.daw2.m07;
+package edu.fje.daw2.m07.repositoris;
 
 import edu.fje.daw2.m07.model.Client;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -10,7 +10,7 @@ import java.util.List;
  * @version  1.0 4.4.2019
  */
 
-public interface ClientRepositori extends MongoRepository<Client, String> {
+public interface M4_ClientRepositori extends MongoRepository<Client, String> {
 
     Client findByNom(String nom);
     List<Client> findByCognom(String cognom);

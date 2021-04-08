@@ -12,6 +12,8 @@ import java.util.Set;
 
 /**
  * Controlador principal del projecte
+ * Implementa un CRUD per l'entitat alumne. Fa servir contingut estatic i
+ * plantilles thymeleaf com a vista
  *
  * @author sergi.grau@fje.edu
  * @version 1.0 24.02.21

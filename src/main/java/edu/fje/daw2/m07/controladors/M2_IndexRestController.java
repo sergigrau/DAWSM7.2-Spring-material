@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.MessageFormat;
 /**
  * Controlador que fa us de REST
+ * Implementa una petició HTTP GET de manera simple que
+ * retorna un JSON
  *
  * @author sergi.grau@fje.edu
  * @version 1.0 04.03.21

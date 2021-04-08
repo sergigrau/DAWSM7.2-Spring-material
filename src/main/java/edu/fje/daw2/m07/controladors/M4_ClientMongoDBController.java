@@ -1,6 +1,6 @@
 package edu.fje.daw2.m07.controladors;
 
-import edu.fje.daw2.m07.ClientRepositori;
+import edu.fje.daw2.m07.repositoris.M4_ClientRepositori;
 import edu.fje.daw2.m07.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,10 +19,10 @@ import java.util.List;
  */
 @Controller
 @SessionAttributes("clients")
-public class M4_ClientController {
+public class M4_ClientMongoDBController {
 
     @Autowired
-    private ClientRepositori repositori;
+    private M4_ClientRepositori repositori;
 
     @ModelAttribute("clients")
     public List<Client> inicialitzar() {
@@ -33,8 +33,6 @@ public class M4_ClientController {
         }
         return clients;
     }
-
-
 
     @RequestMapping(value={"/client", "/usuari"})
     String mostrarFormulari() {
@@ -54,9 +52,7 @@ public class M4_ClientController {
             model.addAttribute("clients", clients);
         }
         clients.add(c);
-
-
-        return("llistaClients");
+        return("llistarClients");
     }
 
     @RequestMapping(value="/esborrarClient", method = RequestMethod.GET)
@@ -70,7 +66,7 @@ public class M4_ClientController {
         t.setId(id);
         clients.remove(t);
 
-        return("llistaClients");
+        return("llistarClients");
     }
 
 }

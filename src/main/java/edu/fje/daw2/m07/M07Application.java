@@ -1,6 +1,7 @@
 package edu.fje.daw2.m07;
 
 import edu.fje.daw2.m07.model.Client;
+import edu.fje.daw2.m07.repositoris.M4_ClientRepositori;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,9 +29,8 @@ public class M07Application {
     @RestController
     public static class M07uf2Application implements CommandLineRunner {
 
-
         @Autowired
-        private ClientRepositori repositori;
+        private M4_ClientRepositori repositori;
 
         public static void main(String[] args) {
             SpringApplication.run(M07uf2Application.class, args);
@@ -44,8 +44,8 @@ public class M07Application {
         @Override
         public void run(String... args) throws Exception {
 
+            //Joc de proves de MongoDB
             repositori.deleteAll();
-
             repositori.save(new Client("Sergi", "Grau", 1000));
             repositori.save(new Client("Joan", "Grau", 2000));
 
@@ -58,7 +58,6 @@ public class M07Application {
             for (Client c : repositori.findByCognom("Grau")) {
                 System.out.println(c);
             }
-
         }
     }
 }

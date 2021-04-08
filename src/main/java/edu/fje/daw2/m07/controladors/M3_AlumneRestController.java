@@ -9,6 +9,7 @@ import java.util.Set;
 
 /**
  * Controlador principal del projecte basat en REST
+ * Implementa el mateix CRUD que el M1 però en REST
  *
  * @author sergi.grau@fje.edu
  * @version 1.0 04.03.21

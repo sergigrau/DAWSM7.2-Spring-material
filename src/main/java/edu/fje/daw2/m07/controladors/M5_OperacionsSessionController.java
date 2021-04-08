@@ -9,6 +9,7 @@ import java.util.Map;
 
 /**
  * Classe Controladora principal
+ * Fa us de sessions
  * Verifica el funcionament de curl
  * @author sergi.grau@fje.edu
  * @version 1.0 21.3.19
@@ -16,7 +17,7 @@ import java.util.Map;
  */
 @Controller
 @SessionAttributes("total")
-public class M5_OperacionsController {
+public class M5_OperacionsSessionController {
 
     @ModelAttribute("total")
     public int inicialitzar() {
@@ -26,11 +27,10 @@ public class M5_OperacionsController {
 
     @RequestMapping("/sumaForm")
     String mostrarFormulari() {
-        return("formulari");
+        return("sumaForm");
     }
 
     @RequestMapping(value="/sumaRes", method = RequestMethod.GET)
-
     String mostrarResultats(@SessionAttribute("total") int total,
                             @RequestParam (defaultValue = "0") String n1,
                             @RequestParam (defaultValue = "0") String n2,
@@ -42,8 +42,6 @@ public class M5_OperacionsController {
         //podem afegir JSON, String, Array, Map, List, etc...
         model.addAttribute("suma", suma);
         model.addAttribute("total", total);
-
-
         return("resultats");
     }
 

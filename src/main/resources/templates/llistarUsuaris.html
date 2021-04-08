@@ -12,17 +12,17 @@
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Llistat alumne</li>
+            <li class="breadcrumb-item active" aria-current="page">Llistat usuari</li>
         </ol>
     </nav>
     <ul class="list-group">
         <!--@thymesVar id="alumne" type="edu.fje.daw2.m07.model.Alumne"-->
-        <li class="list-group-item"  th:each="alumne, dades: ${alumnes}" >
+        <li class="list-group-item"  th:each="usuari, dades: ${usuaris}" >
             <span th:text="${dades.index}" />
             <!--/*@thymesVar id="nom" type="String"*/-->
-            <!--/*@thymesVar id="nota" type="int"*/-->
-            <span th:text="${alumne.nom}" />
-            <span th:text="${alumne.nota}" />
+            <!--/*@thymesVar id="cognom" type="int"*/-->
+            <span th:text="${usuari.nom}" />
+            <span th:text="${usuari.cognom}" />
         </li>
 
     </ul>
