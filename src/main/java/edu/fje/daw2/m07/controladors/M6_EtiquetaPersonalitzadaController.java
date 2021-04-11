@@ -1,5 +1,6 @@
 package edu.fje.daw2.m07.controladors;
 
+import edu.fje.daw2.m07.model.Alumne;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,9 @@ public class M6_EtiquetaPersonalitzadaController {
     public String salutar(
             @RequestParam(defaultValue = "sergi", required = false) String nom,
             Model model) {
-        model.addAttribute("usuari", nom);
+        Alumne alumne= new Alumne("sergi", 8);
+        model.addAttribute("alumne", alumne);
+
         return "etiqueta";
     }
 }

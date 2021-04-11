@@ -23,23 +23,31 @@ public class M7_JPAUsuariService {
     @Autowired
     private M7_JPAUsuariRepository ur;
 
-    public List<Usuari> findAll() {
+    public List<Usuari> trobarTots() {
         var it = ur.findAll();
-        var Usuaris = new ArrayList<Usuari>();
-        it.forEach(e -> Usuaris.add(e));
-        return Usuaris;
+        var usuaris = new ArrayList<Usuari>();
+        it.forEach(usuaris::add); //equivalent a it.forEach(e -> usuaris.add(e));
+        return usuaris;
     }
 
-    public Long count() {
+    public Long comptar() {
         return ur.count();
     }
 
-    public void deleteById(Long UsuariId) {
+    public void modificarPerId(Long UsuariId) {
         ur.deleteById(UsuariId);
+    }
+
+    public Usuari trobarPerId(Long id){
+       return ur.findById(id).get();
     }
 
     public void afegirUsuari(String nom, String cognom, String email){
         var u1 = new Usuari(nom, cognom, email);
         ur.save(u1);
     }
+    public void afegirUsuari(Usuari u){
+        ur.save(u);
+    }
+
 }

@@ -1,15 +1,13 @@
 <!DOCTYPE html >
-<html lang="ca" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html lang="ca"
 <head>
-    <title>Layout page</title>
+    <title>Etiqueta personalitzada</title>
 </head>
 <body>
 <header>
-    <h1>principal</h1>
+    <h1>Etiqueta personalitzada</h1>
 </header>
-<section layout:fragment="content">
-    El contingut va aquí
-    <span daw2:salutacio="sergi"></span>
-</section>
+<p th:data-nom="${alumne.nom}" th:data-nota="${alumne.nota}">
+    mireu els atributs d'aquest paràgraf </p>
 </body>
 </html>
